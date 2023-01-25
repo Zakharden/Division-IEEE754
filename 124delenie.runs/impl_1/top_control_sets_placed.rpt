@@ -1,0 +1,117 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Fri Dec 16 10:23:43 2022
+| Host         : vt-06-434008341 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
+| Design       : top
+| Device       : xc7a100t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    39 |
+|    Minimum number of control sets                        |    39 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   149 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    39 |
+| >= 0 to < 4        |     4 |
+| >= 4 to < 6        |    19 |
+| >= 6 to < 8        |     2 |
+| >= 8 to < 10       |     2 |
+| >= 10 to < 12      |     4 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     8 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              45 |           14 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              34 |           14 |
+| Yes          | No                    | No                     |             162 |           62 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             106 |           36 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------------+---------------------------------------+---------------------------------------------+------------------+----------------+
+|    Clock Signal    |             Enable Signal             |               Set/Reset Signal              | Slice Load Count | Bel Load Count |
++--------------------+---------------------------------------+---------------------------------------------+------------------+----------------+
+|  PS2_CLK_IBUF_BUFG | keyboard/nextState_i_1_n_0            | keyboard/reset0                             |                1 |              1 |
+|  PS2_CLK_IBUF_BUFG | keyboard/reset_i_1_n_0                | keyboard/reset0                             |                1 |              1 |
+|  hsync_reg_i_2_n_0 | vga/hvsync_gen/hmaxxed                |                                             |                2 |              2 |
+|  hsync_reg_i_2_n_0 |                                       |                                             |                2 |              3 |
+|  clk_BUFG          | fsm/REG_B[0]                          |                                             |                1 |              4 |
+|  clk_BUFG          | fsm/REG_B[4]                          |                                             |                1 |              4 |
+|  clk_BUFG          | fsm/REG_B[9]                          |                                             |                2 |              4 |
+|  hsync_reg_i_2_n_0 | vga/hvsync_gen/E[0]                   |                                             |                1 |              4 |
+|  hsync_reg_i_2_n_0 | vga/hvsync_gen/FSM_onehot_i_reg[2][0] |                                             |                2 |              4 |
+|  hsync_reg_i_2_n_0 | vga/hvsync_gen/FSM_onehot_i_reg[1][0] |                                             |                1 |              4 |
+|  hsync_reg_i_2_n_0 | vga/hvsync_gen/hpos_reg[5]_1[0]       |                                             |                1 |              4 |
+|  clk_BUFG          | fsm/REG_B[12]                         |                                             |                2 |              4 |
+|  clk_BUFG          | fsm/REG_A[11]                         |                                             |                1 |              4 |
+|  clk_BUFG          | fsm/i                                 |                                             |                2 |              4 |
+|  clk_BUFG          | fsm/REG_A[5]                          |                                             |                1 |              4 |
+|  clk_BUFG          | fsm/FSM_sequential_state[3]_i_1_n_0   |                                             |                2 |              4 |
+|  PS2_CLK_IBUF_BUFG | keyboard/out_data[3]_i_1_n_0          |                                             |                2 |              4 |
+|  clk_BUFG          | fsm/REG_A[12]                         |                                             |                1 |              4 |
+|  clk_BUFG          | fsm/REG_A[3]                          |                                             |                2 |              4 |
+|  hsync_reg_i_2_n_0 | vga/hvsync_gen/hpos_reg[6]_0[0]       |                                             |                4 |              5 |
+|  clk_BUFG          | fsm/exponenta[4]_i_1_n_0              | fsm/vspomogatelnaya_peremennaya[21]_i_1_n_0 |                2 |              5 |
+|  PS2_CLK_IBUF_BUFG | keyboard/bitCount                     |                                             |                1 |              5 |
+|  clk_BUFG          | fsm/quotient_ieee754[14]_i_1_n_0      |                                             |                1 |              5 |
+|  PS2_CLK_IBUF_BUFG |                                       |                                             |                3 |              6 |
+|  PS2_CLK_IBUF_BUFG | keyboard/code                         | keyboard/code[7]_i_1_n_0                    |                2 |              6 |
+|  clk_BUFG          | fsm/divider_copy1                     | fsm/shift_divider[7]_i_1_n_0                |                3 |              8 |
+|  hsync_reg_i_2_n_0 | vga/hvsync_gen/hmaxxed                | vga/hvsync_gen/vpos[10]_i_1_n_0             |                3 |              9 |
+|  clk_BUFG          | fsm/exponenta[4]_i_1_n_0              |                                             |                5 |             10 |
+|  clk_BUFG          | fsm/divider_copy1                     |                                             |                4 |             10 |
+|  hsync_reg_i_2_n_0 |                                       | vga/hvsync_gen/hmaxxed                      |                4 |             11 |
+|  clk_BUFG          | fsm/divident_copy1                    |                                             |                2 |             11 |
+|  clk_BUFG          |                                       |                                             |                3 |             18 |
+|  clk_old_IBUF_BUFG |                                       |                                             |                6 |             18 |
+|  clk_BUFG          | fsm/quotient_copy_ieee                |                                             |               14 |             22 |
+|  clk_BUFG          |                                       | fsm/quotient_divider0                       |               10 |             23 |
+|  clk_BUFG          | fsm/divident_copy1                    | fsm/quotient_divider0                       |                7 |             23 |
+|  clk_BUFG          | fsm/divider_copy1                     | fsm/divider_copy1[33]_i_1_n_0               |                7 |             23 |
+|  clk_BUFG          | fsm/shift_ieee                        | fsm/vspomogatelnaya_peremennaya[21]_i_1_n_0 |               10 |             30 |
+|  clk_BUFG          | fsm/divider_ieee754[15]_i_1_n_0       |                                             |                7 |             32 |
++--------------------+---------------------------------------+---------------------------------------------+------------------+----------------+
+
+
